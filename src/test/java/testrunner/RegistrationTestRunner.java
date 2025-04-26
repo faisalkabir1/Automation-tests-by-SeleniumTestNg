@@ -1,13 +1,18 @@
+package testrunner;
+
 import com.github.javafaker.Faker;
+import config.Setup;
 import org.openqa.selenium.By;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.Test;
+import pages.UserRegistrationPage;
+import utils.Utils;
 
 import java.time.Duration;
 
-public class RegistrationTestRunner extends Setup{
+public class RegistrationTestRunner extends Setup {
 
     @Test(description = "User registration")
     public void userRegistration() throws InterruptedException {

@@ -1,4 +1,8 @@
+package testrunner;
+
+import config.Setup;
 import org.testng.annotations.Test;
+import pages.LoginPage;
 
 public class LoginTestRunner extends Setup {
     @Test
