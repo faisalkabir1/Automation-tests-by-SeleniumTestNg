@@ -16,6 +16,8 @@ dependencies {
     implementation("org.seleniumhq.selenium:selenium-java:4.31.0")
     // https://mvnrepository.com/artifact/org.testng/testng
     testImplementation("org.testng:testng:7.10.2")
+    // https://mvnrepository.com/artifact/com.github.javafaker/javafaker
+    implementation("com.github.javafaker:javafaker:1.0.2")
 
 }
 
