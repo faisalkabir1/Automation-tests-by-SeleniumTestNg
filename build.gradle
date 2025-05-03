@@ -18,6 +18,13 @@ dependencies {
     testImplementation("org.testng:testng:7.10.2")
     // https://mvnrepository.com/artifact/com.github.javafaker/javafaker
     implementation("com.github.javafaker:javafaker:1.0.2")
+    // https://mvnrepository.com/artifact/io.rest-assured/rest-assured
+    testImplementation("io.rest-assured:rest-assured:5.5.1")
+    // https://mvnrepository.com/artifact/com.googlecode.json-simple/json-simple
+    implementation("com.googlecode.json-simple:json-simple:1.1.1")
+    implementation group: 'commons-configuration', name: 'commons-configuration', version: '1.10'
+
+
 
 }
 
