@@ -5,8 +5,6 @@ import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
 
 import java.io.FileInputStream;
-import java.io.FileReader;
-import java.io.FileWriter;
 import java.io.IOException;
 import java.util.Properties;
 
@@ -52,7 +50,7 @@ public class Utils {
                 .header("Authorization", "Bearer " + props.getProperty("google_access_token"))
                 .when().get("/gmail/v1/users/me/messages/" + messageId);
 
-        System.out.println(res.asString());
+        //System.out.println(res.asString());
 
         JsonPath jsonPath = res.jsonPath();
         return jsonPath.getString("snippet");
