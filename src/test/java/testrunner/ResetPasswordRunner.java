@@ -4,11 +4,10 @@ import config.Setup;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
-import pages.ResetPasswordPage;
-
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
+import pages.ResetPasswordPage;
 
 import java.io.IOException;
 
@@ -20,54 +19,33 @@ public class ResetPasswordRunner extends Setup {
 
     @BeforeClass
     public void init() {
-        // Initialize the ResetPasswordPage after driver is set up
         resetPass = new ResetPasswordPage(driver);
     }
 
-
-    @Test(priority = 3, description = " Give valid gmail account in Forgot Password Field")
-    public void RegisteredGmail() throws IOException {
-        //  driver.get("https://dailyfinance.roadtocareer.net/login");
-        //resetPass.linkResetPassword.click();
-        resetPass.getValidEmail("fkkabir70@gmail.com");
-
-        newPass = resetPass.getValidEmail(userEmail);
-
-    }
-
-
-    //Negative Case
-
     @Test(priority = 1, description = "Reset New Password With Unregistered Email")
     public void resetPassUnregisteredEmail() {
-      //  driver.get("https://dailyfinance.roadtocareer.net/login");
         resetPass.linkResetPassword.click();
         resetPass.UnregisteredEmail("abcd1234@gmail.com");
-
-
     }
-
-
-    //Negative Case
 
     @Test(priority = 2, description = "Reset New Password With Invalid Email")
     public void resetPassInvalidEmail() {
-      //  driver.get("https://dailyfinance.roadtocareer.net/login");
-//        resetPass.linkResetPassword.click();
         resetPass.InvalidEmail("abcd1234@@gmail..com");
-        WebElement emailInput = resetPass.txtEmail.get(0);
+//invalid email validation checks on browser should execute
+        WebElement emailInput = resetPass.txtEmail;
         boolean isValid = (Boolean) ((JavascriptExecutor) driver)
-                .executeScript("return arguments[0].checkValidity();", emailInput);
+                .executeScript("return arguments[0].checkValidity();", emailInput); //check email validation is called
 
-        Assert.assertFalse(isValid); // for invalid email
+        Assert.assertFalse(isValid, "Invalid email was unexpectedly accepted!");
     }
 
-
+    @Test(priority = 3, description = "Give valid gmail account in Forgot Password Field")
+    public void RegisteredGmail() throws IOException, InterruptedException {
+        newPass = resetPass.getValidEmail("fkkabir70@gmail.com");
+    }
 
     @AfterClass
     public void tearDown() {
-        // Close the browser
         driver.quit();
     }
-
 }
