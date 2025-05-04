@@ -70,14 +70,16 @@ public class ResetPasswordPage {
         txtEmail.sendKeys(userEmail);
         btnSendReset.click();
         txtInformation.isDisplayed();
-
+        Thread.sleep(4000);
         String email = Utils.readLatestMail();
         String resetPassLink = email.split(": ")[1].trim();
         driver.get(resetPassLink);
 
         Utils.generateAndStorePassword(); // Generates and stores password
         String newPass = Utils.generatedPassword;
+        Utils.savePasswordToConfig(newPass);
         txtNewPassword.get(0).sendKeys(newPass);
+        Thread.sleep(2000);
         txtNewPassword.get(1).sendKeys(newPass);
         btnResetPass.click();
         Thread.sleep(2000);

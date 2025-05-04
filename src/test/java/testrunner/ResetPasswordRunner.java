@@ -39,9 +39,10 @@ public class ResetPasswordRunner extends Setup {
         Assert.assertFalse(isValid, "Invalid email was unexpectedly accepted!");
     }
 
-    @Test(priority = 3, description = "Give valid gmail account in Forgot Password Field")
+    @Test(priority = 3, description = "Give valid gmail account in Forgot Password Field and Change the password")
     public void RegisteredGmail() throws IOException, InterruptedException {
-        newPass = resetPass.getValidEmail("fkkabir70@gmail.com");
+        userEmail = "fkkabir70@gmail.com";
+        newPass = resetPass.getValidEmail(userEmail);
     }
 
     @AfterClass
