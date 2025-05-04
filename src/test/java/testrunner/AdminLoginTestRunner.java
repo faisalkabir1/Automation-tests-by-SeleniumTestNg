@@ -2,12 +2,13 @@ package testrunner;
 
 import config.Setup;
 import org.testng.annotations.Test;
-import pages.LoginPage;
+import pages.AdminLoginPage;
 
-public class LoginTestRunner extends Setup {
+public class AdminLoginTestRunner extends Setup {
+
     @Test
     public void adminLogin(){
-        LoginPage loginpage = new LoginPage(driver);
+        AdminLoginPage loginpage = new AdminLoginPage(driver);
         loginpage.doLogin("admin@test.com", "admin123");
 
     }

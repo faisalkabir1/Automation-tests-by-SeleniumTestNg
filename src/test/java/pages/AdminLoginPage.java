@@ -5,7 +5,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class LoginPage {
+public class AdminLoginPage {
     @FindBy(id="email")
     WebElement txtEmail;
     @FindBy(id="password")
@@ -13,7 +13,7 @@ public class LoginPage {
     @FindBy(tagName="button")
     WebElement btnLogin;
 
-    public LoginPage(WebDriver driver){
+    public AdminLoginPage(WebDriver driver){
         PageFactory.initElements(driver, this);
 
     }
