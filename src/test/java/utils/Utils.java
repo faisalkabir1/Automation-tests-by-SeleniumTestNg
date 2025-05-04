@@ -6,6 +6,7 @@ import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
 
 import java.io.FileInputStream;
+import java.io.FileOutputStream;
 import java.io.IOException;
 import java.util.Properties;
 
@@ -61,7 +62,25 @@ public class Utils {
 
     public static void generateAndStorePassword() {
         Faker faker = new Faker();
-        generatedPassword = faker.internet().password(4, 8, true, true);
+        generatedPassword = faker.internet().password(6, 8, true);
         System.out.println("Generated password: " + generatedPassword); // Optional for debugging
+    }
+    public static void savePasswordToConfig(String password) {
+        String configFilePath = "./src/test/resources/config.properties"; // Adjust path
+        Properties props = new Properties();
+
+        try (FileInputStream in = new FileInputStream(configFilePath)) {
+            props.load(in);
+        } catch (IOException e) {
+            System.out.println("config.properties not found or empty, continuing...");
+        }
+
+        try (FileOutputStream out = new FileOutputStream(configFilePath)) {
+            props.setProperty("Password", generatedPassword);
+            props.store(out, "Updated password");
+            System.out.println("Password saved to config.properties.");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 }
