@@ -2,7 +2,7 @@
 <suite name = "Daily Finance">
     <test name ="Admin login">
         <classes>
-            <class name ="testrunner.LoginTestRunner"></class>
+            <class name ="testrunner.AdminLoginTestRunner"></class>
         </classes>
     </test>
     <test name ="User Registration">
