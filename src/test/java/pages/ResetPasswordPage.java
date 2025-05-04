@@ -75,7 +75,8 @@ public class ResetPasswordPage {
         String resetPassLink = email.split(": ")[1].trim();
         driver.get(resetPassLink);
 
-        String newPass = "55555";
+        Utils.generateAndStorePassword(); // Generates and stores password
+        String newPass = Utils.generatedPassword;
         txtNewPassword.get(0).sendKeys(newPass);
         txtNewPassword.get(1).sendKeys(newPass);
         btnResetPass.click();

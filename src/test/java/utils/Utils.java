@@ -1,5 +1,6 @@
 package utils;
 
+import com.github.javafaker.Faker;
 import io.restassured.RestAssured;
 import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
@@ -13,6 +14,7 @@ import static io.restassured.RestAssured.given;
 public class Utils {
     public static Properties props;
     public static FileInputStream file;
+    public static String generatedPassword;
 
     public static int generateRandomNumber(int min, int max){
         double randomNumber= Math.random()*(max-min)+min;
@@ -57,4 +59,9 @@ public class Utils {
 
     }
 
+    public static void generateAndStorePassword() {
+        Faker faker = new Faker();
+        generatedPassword = faker.internet().password(4, 8, true, true);
+        System.out.println("Generated password: " + generatedPassword); // Optional for debugging
+    }
 }
