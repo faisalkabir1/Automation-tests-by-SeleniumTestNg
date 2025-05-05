@@ -21,6 +21,8 @@ public class UserLogin {
     public List<WebElement> btnProfileMenuItems;
     @FindBy(tagName = "h2")
     public WebElement dashboardMsg;
+    @FindBy(tagName = "p")
+    public List<WebElement> errorMsg;
 
     public  UserLogin (WebDriver driver){
         PageFactory.initElements(driver,this);
