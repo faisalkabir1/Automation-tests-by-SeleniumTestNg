@@ -1,14 +1,31 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<suite name = "Daily Finance">
-    <test name ="Admin login">
-        <classes>
-            <class name ="testrunner.AdminLoginTestRunner"></class>
-        </classes>
-    </test>
+<suite name = "Daily Finance App Automation test Suite">
     <test name ="User Registration">
         <classes>
             <class name ="testrunner.RegistrationTestRunner"></class>
         </classes>
     </test>
-
+    <test name ="Reset Password Test">
+        <classes>
+            <class name ="testrunner.ResetPasswordRunner"></class>
+        </classes>
+    </test><test name ="User Login">
+    <classes>
+        <class name ="testrunner.UserLoginRunner"></class>
+    </classes>
+</test><test name ="User Profile Update Test">
+    <classes>
+        <class name ="testrunner.UserProfileUpdateRunner"></class>
+    </classes>
+</test>
+    <test name ="Admin login">
+        <classes>
+            <class name ="testrunner.AdminLoginTestRunner"></class>
+        </classes>
+    </test>
+    <test name ="User Registration from CSV dataset">
+    <classes>
+        <class name ="testrunner.UserRegistrationFromCSVTest"></class>
+    </classes>
+</test>
 </suite>

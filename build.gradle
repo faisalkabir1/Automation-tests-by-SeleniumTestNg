@@ -25,15 +25,19 @@ dependencies {
     implementation group: 'commons-configuration', name: 'commons-configuration', version: '1.10'
     implementation group: 'org.apache.commons', name: 'commons-csv', version: '1.12.0'
     implementation group: 'com.fasterxml.jackson.core', name: 'jackson-databind', version: '2.16.1'
-
-
-
-
+    // https://mvnrepository.com/artifact/io.qameta.allure/allure-testng
+    implementation("io.qameta.allure:allure-testng:2.29.1")
 
 }
 
-test {
+test{
     useTestNG(){
+        if(project.hasProperty("email") && project.hasProperty("password")){
+            systemProperties.put("email",project.property("email"))
+            systemProperties.put("password",project.property("password"))
+            print(project.property("email"))
+            print(project.property("password"))
+        }
         suites "./src/test/resources/suite.xml"
-    }
+        }
 }
