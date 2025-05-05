@@ -3,7 +3,6 @@ package testrunner;
 import config.Setup;
 import pages.AddCostPage;
 import pages.UserLogin;
-import org.json.simple.parser.ParseException;
 import org.openqa.selenium.By;
 import org.testng.Assert;
 import org.testng.annotations.AfterClass;

@@ -10,8 +10,6 @@ import org.testng.annotations.AfterClass;
 import org.testng.annotations.Test;
 import pages.AdminLoginPage;
 import pages.SearchUpdatedGmail;
-
-import java.io.IOException;
 import java.time.Duration;
 
 public class AdminLoginTestRunner extends Setup {
