@@ -29,7 +29,6 @@ public class UserLoginRunner extends Setup {
         String email = "fkkabir70@gmail.com";
         System.out.println("Email: " + email);
         System.out.println("Password: " + password);
-
         userLogin.doLogin(email, password);
         Thread.sleep(5000);
 
@@ -52,17 +51,14 @@ public class UserLoginRunner extends Setup {
         addCostPage.addExpenditure(itemName, amount, quantity, purchaseDate, month, remarks);
 
 
-        Thread.sleep(5000);
+        Thread.sleep(2000);
         driver.switchTo().alert().accept();
 
 
-        ItemAssert();
-
-
     }
-
-
+    @Test(dependsOnMethods = {"addCost"}, description = "Assert added items")
     public void ItemAssert() throws InterruptedException {
+        Thread.sleep(5000);
         // Get the text from the rows
         String firstItem = driver.findElements(By.tagName("tr")).get(1).getText();
         String secondItem = driver.findElements(By.tagName("tr")).get(2).getText();
@@ -70,8 +66,8 @@ public class UserLoginRunner extends Setup {
         System.out.println("Second Item: " + secondItem );
 
 
-        String expectedFirstItem = "Pen";
-        String expectedSecondItem = "Apple";
+        String expectedFirstItem = "Orange";
+        String expectedSecondItem = "Fish";
 
 
         String actualFirstItem = firstItem.split(" ")[0];
@@ -79,8 +75,8 @@ public class UserLoginRunner extends Setup {
 
         Thread.sleep(2000);
 
-        Assert.assertEquals(actualFirstItem, expectedFirstItem, "First item is not 'pen'");
-        Assert.assertEquals(actualSecondItem, expectedSecondItem, "Second item is not 'apple'");
+        Assert.assertEquals(actualFirstItem, expectedFirstItem, "First item is not 'Orange'");
+        Assert.assertEquals(actualSecondItem, expectedSecondItem, "Second item is not 'Fish'");
 
 
 
