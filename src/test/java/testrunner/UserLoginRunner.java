@@ -30,7 +30,7 @@ public class UserLoginRunner extends Setup {
         System.out.println("Email: " + email);
         System.out.println("Password: " + password);
         userLogin.doLogin(email, password);
-        Thread.sleep(5000);
+        Thread.sleep(2000);
 
     }
 

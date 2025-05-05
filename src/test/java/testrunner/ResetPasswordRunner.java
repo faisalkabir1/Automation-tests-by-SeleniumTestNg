@@ -23,13 +23,13 @@ public class ResetPasswordRunner extends Setup {
     }
 
     @Test(priority = 1, description = "Reset New Password With Unregistered Email")
-    public void resetPassUnregisteredEmail() {
+    public void resetPassUnregisteredEmail() throws InterruptedException {
         resetPass.linkResetPassword.click();
         resetPass.UnregisteredEmail("abcd1234@gmail.com");
     }
 
     @Test(priority = 2, description = "Reset New Password With Invalid Email")
-    public void resetPassInvalidEmail() {
+    public void resetPassInvalidEmail() throws InterruptedException {
         resetPass.InvalidEmail("abcd1234@@gmail..com");
 //invalid email validation checks on browser should execute
         WebElement emailInput = resetPass.txtEmail;

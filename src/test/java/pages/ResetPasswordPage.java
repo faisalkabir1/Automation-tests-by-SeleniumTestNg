@@ -79,30 +79,30 @@ public class ResetPasswordPage {
         String newPass = Utils.generatedPassword;
         Utils.savePasswordToConfig(newPass);
         txtNewPassword.get(0).sendKeys(newPass);
-        Thread.sleep(2000);
+        Thread.sleep(4000);
         txtNewPassword.get(1).sendKeys(newPass);
         btnResetPass.click();
         Thread.sleep(2000);
         String MsgActual = txtInformation.getText();
         String MsgExpected = "Password reset successfully";
         Assert.assertTrue(MsgActual.contains(MsgExpected));
-
         return newPass;
     }
 
-    public void UnregisteredEmail(String userEmail) {
+    public void UnregisteredEmail(String userEmail) throws InterruptedException {
         reliableClear(txtEmail);
         txtEmail.sendKeys(userEmail);
         btnSendReset.click();
-
+        Thread.sleep(2000);
         String ActualMessage = txtInformation.getText();
         String ExpectedMessage = "Your email is not registered";
         Assert.assertTrue(ActualMessage.contains(ExpectedMessage));
     }
 
-    public void InvalidEmail(String userEmail) {
+    public void InvalidEmail(String userEmail) throws InterruptedException {
         reliableClear(txtEmail);
         txtEmail.sendKeys(userEmail);
         btnSendReset.click();
+        Thread.sleep(2000);
     }
 }

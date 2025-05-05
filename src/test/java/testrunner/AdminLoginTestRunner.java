@@ -29,7 +29,7 @@ private AdminLoginPage adminLoginPage;
     private SearchUpdatedGmail searchUpdatedGmail;
     // private WebDriver driver;
     @Test(priority = 1, description = "Admin Login")
-    public void adminLogin() throws IOException {
+    public void adminLogin() throws IOException, InterruptedException {
 
         AdminLoginPage adminLoginPage = new   AdminLoginPage(driver);
         if(System.getProperty("username")!=null && System.getProperty("password")!=null){
@@ -43,7 +43,7 @@ private AdminLoginPage adminLoginPage;
         WebElement headerElement = wait.until(ExpectedConditions.visibilityOfElementLocated(By.tagName("h2")));
         String headerActual = headerElement.getText();
         String headerExpected = "Admin Dashboard";
-
+        Thread.sleep(2000);
         Assert.assertTrue(headerActual.contains(headerExpected));
 
     }
@@ -52,7 +52,7 @@ private AdminLoginPage adminLoginPage;
     public void searchUpdatedGmail() throws InterruptedException {
         String email= "onlyfaisalkabir@gmail.com";
         searchUpdatedGmail = new SearchUpdatedGmail(driver);
-        Thread.sleep(2000);
+        Thread.sleep(4000);
         searchUpdatedGmail.EmailSearching(email);
         Thread.sleep(2000);
         AdminLoginPage.doLogout();
