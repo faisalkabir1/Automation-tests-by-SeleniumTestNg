@@ -1,10 +1,11 @@
 .gradle
-build/
+.idea
+build
+gradle
+logs
 !gradle/wrapper/gradle-wrapper.jar
 !**/src/main/**/build/
 !**/src/test/**/build/
-.idea
-logs
 allure-report
 allure-results
 config.properties
