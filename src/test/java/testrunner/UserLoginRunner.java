@@ -8,8 +8,6 @@ import org.openqa.selenium.By;
 import org.testng.Assert;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.Test;
-import utils.Utils;
-
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.Properties;
@@ -19,7 +17,7 @@ public class UserLoginRunner extends Setup {
     public static Properties props;
 
     @Test(priority = 1, description = "User can Login With New Password")
-    public void userLogin() throws IOException, ParseException, InterruptedException {
+    public void userLogin() throws IOException, InterruptedException {
 
         userLogin = new UserLogin(driver);
         props = new Properties();
