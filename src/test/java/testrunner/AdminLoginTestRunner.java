@@ -1,7 +1,6 @@
 package testrunner;
 
 import config.Setup;
-import org.apache.commons.configuration.plist.ParseException;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -11,25 +10,15 @@ import org.testng.annotations.AfterClass;
 import org.testng.annotations.Test;
 import pages.AdminLoginPage;
 import pages.SearchUpdatedGmail;
-import pages.UserProfileUpdate;
 
 import java.io.IOException;
 import java.time.Duration;
 
 public class AdminLoginTestRunner extends Setup {
 
-////    @Test
-////    public void adminLogin(){
-////        AdminLoginPage loginpage = new AdminLoginPage(driver);
-////        loginpage.doLogin("admin@test.com", "admin123");
-//
-//    }
-
-private AdminLoginPage adminLoginPage;
-    private SearchUpdatedGmail searchUpdatedGmail;
     // private WebDriver driver;
     @Test(priority = 1, description = "Admin Login")
-    public void adminLogin() throws IOException, InterruptedException {
+    public void adminLogin() throws InterruptedException {
 
         AdminLoginPage adminLoginPage = new   AdminLoginPage(driver);
         if(System.getProperty("username")!=null && System.getProperty("password")!=null){
@@ -51,7 +40,13 @@ private AdminLoginPage adminLoginPage;
     @Test(priority = 2, description = "Searching updated gmail in row")
     public void searchUpdatedGmail() throws InterruptedException {
         String email= "onlyfaisalkabir@gmail.com";
-        searchUpdatedGmail = new SearchUpdatedGmail(driver);
+        ////    @Test
+        ////    public void adminLogin(){
+        ////        AdminLoginPage loginpage = new AdminLoginPage(driver);
+        ////        loginpage.doLogin("admin@test.com", "admin123");
+        //
+        //    }
+        SearchUpdatedGmail searchUpdatedGmail = new SearchUpdatedGmail(driver);
         Thread.sleep(4000);
         searchUpdatedGmail.EmailSearching(email);
         Thread.sleep(2000);
