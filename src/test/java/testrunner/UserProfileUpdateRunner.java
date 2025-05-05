@@ -78,6 +78,7 @@ public class UserProfileUpdateRunner extends Setup {
         String actualMsg = userLogin.dashboardMsg.getText();
         System.out.println(actualMsg);
         Assert.assertTrue(actualMsg.contains(expectedMsg));
+        userLogin.doLogout();
     }
 
 

@@ -1,5 +1,6 @@
 package pages;
 
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -28,7 +29,11 @@ public class UserLogin {
         PageFactory.initElements(driver,this);
     }
     public void doLogin(String email, String password){
+        txtEmail.sendKeys(Keys.CONTROL,"a");
+        txtEmail.sendKeys(Keys.BACK_SPACE);
         txtEmail.sendKeys(email);
+        txtPassword.sendKeys(Keys.CONTROL,"a");
+        txtPassword.sendKeys(Keys.BACK_SPACE);
         txtPassword.sendKeys(password);
         btnsubmit.click();
 

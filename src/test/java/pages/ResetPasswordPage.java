@@ -40,7 +40,7 @@ public class ResetPasswordPage {
         PageFactory.initElements(driver, this);
     }
 
-    private void reliableClear(WebElement element) {
+    public void reliableClear(WebElement element) {
         try {
             // Click to focus
             element.click();

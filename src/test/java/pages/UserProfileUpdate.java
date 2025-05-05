@@ -41,7 +41,7 @@ public class UserProfileUpdate {
         txtEmail.sendKeys(Keys.CONTROL,"a");
         txtEmail.sendKeys(Keys.BACK_SPACE);
 
-        updatedMail = "onlyfaisalkabir" + (int) (Math.random() * 1000) + "@gmail.com";
+        updatedMail = "onlyfaisalkabir@gmail.com";
         System.out.println(updatedMail);
         txtEmail.sendKeys(updatedMail);
         btnEditUpload.get(2).click();//upload
