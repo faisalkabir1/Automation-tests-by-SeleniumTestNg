@@ -28,6 +28,6 @@ public class UserRegistrationFromCSVTest extends Setup {
         UserRegistrationPage registrationPage = new UserRegistrationPage(driver);
         registrationPage.userRegistration(userModel);
 
-        Thread.sleep(3000); // wait for success message or redirect
+        Thread.sleep(3000); // wait for success message
     }
 }
