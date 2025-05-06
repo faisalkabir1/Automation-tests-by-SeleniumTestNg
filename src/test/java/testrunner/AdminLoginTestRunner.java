@@ -38,12 +38,7 @@ public class AdminLoginTestRunner extends Setup {
     @Test(priority = 2, description = "Searching updated gmail in row")
     public void searchUpdatedGmail() throws InterruptedException {
         String email= "onlyfaisalkabir@gmail.com";
-        ////    @Test
-        ////    public void adminLogin(){
-        ////        AdminLoginPage loginpage = new AdminLoginPage(driver);
-        ////        loginpage.doLogin("admin@test.com", "admin123");
-        //
-        //    }
+        Thread.sleep(2000);
         SearchUpdatedGmail searchUpdatedGmail = new SearchUpdatedGmail(driver);
         Thread.sleep(4000);
         searchUpdatedGmail.EmailSearching(email);
