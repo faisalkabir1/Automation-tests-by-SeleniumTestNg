@@ -70,7 +70,7 @@ You can watch the demo recording [here]
 ## 📋 Test Cases (Excel)
 
 All standard and negative test cases have been documented in an Excel file.  
-Access the test cases [here]
+Access the test cases [here](https://docs.google.com/spreadsheets/d/1gweKyqPyMwp11loTaKPrV3c9YLV-l_UY/edit?usp=sharing&ouid=110591976413796555813&rtpof=true&sd=true)
 
 ## 🚀 Run Instructions
 
