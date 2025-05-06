@@ -57,13 +57,15 @@ This project automates the test cases of the [DailyFinance Web App](https://dail
 
 ## 📸 Allure Report Screenshot
 
-> 
+> ![image](https://github.com/user-attachments/assets/6e23e1e8-6ba7-4e9b-bfaa-7faabb6362e7)
+> ![image](https://github.com/user-attachments/assets/a947209a-8b62-4db3-bff9-5981804f8929)
+> ![image](https://github.com/user-attachments/assets/d2902457-5ab3-4386-a9e3-010fe44fd7fc)
 
 ---
 ## 🎥 Demo Recording
 
 A full walkthrough of the automation process has been recorded.  
-You can watch the demo recording [here]
+You can watch the demo recording [here](https://drive.google.com/file/d/1J0s6k4Q38oIspkpBP-u2QoE0sOC7Xueq/view?usp=sharing)
 
 ---
 
