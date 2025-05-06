@@ -28,4 +28,9 @@
         <class name ="testrunner.UserRegistrationFromCSVTest"></class>
     </classes>
 </test>
+    <test name ="User Table data scrap and store in a txt file from Admin Dashboard">
+        <classes>
+            <class name ="testrunner.UserTableDataScrapTest"></class>
+        </classes>
+    </test>
 </suite>
