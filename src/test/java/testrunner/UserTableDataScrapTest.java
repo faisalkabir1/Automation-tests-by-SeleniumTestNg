@@ -13,7 +13,7 @@ public class UserTableDataScrapTest extends Setup {
 
         AdminLoginPage loginPage = new AdminLoginPage(driver);
         loginPage.doLogin("admin@test.com", "admin123");
-
+        Thread.sleep(5000);
         AdminDashboardPage dashboard = new AdminDashboardPage(driver);
         dashboard.exportUserDataToTextFile("./src/test/resources/users-data.txt");
     }
