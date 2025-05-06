@@ -7,6 +7,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
+import org.testng.annotations.AfterClass;
 import org.testng.annotations.Test;
 import pages.UserRegistrationPage;
 import utils.Utils;
@@ -39,22 +40,31 @@ public class RegistrationTestRunner extends Setup {
         doAssertion();
         assertRegistrationEmail(firstname);
     }
-        public void doAssertion() {
-            WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(50)); //explicit wait
-            wait.until(ExpectedConditions.visibilityOfElementLocated(By.className("Toastify__toast")));
-            String successfulMessageActual = driver.findElement(By.className("Toastify__toast")).getText();
-            String successfulMessageExpected = "registered successfully!";
-            System.out.println(successfulMessageActual);
-            Assert.assertTrue(successfulMessageActual.contains(successfulMessageExpected));
-        }
-        public  void assertRegistrationEmail(String firstName) throws IOException, InterruptedException {
-            Thread.sleep(4000);
-            String confirmationEmailActual = Utils.readLatestMail();
-            String confirmationEmailExpected = "Dear "+ firstName  + ", Welcome to our platform!";
-            System.out.println(confirmationEmailActual);
-            Assert.assertTrue( confirmationEmailActual.contains(confirmationEmailExpected) );
 
-        }
+    public void doAssertion() {
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(50)); //explicit wait
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.className("Toastify__toast")));
+        String successfulMessageActual = driver.findElement(By.className("Toastify__toast")).getText();
+        String successfulMessageExpected = "registered successfully!";
+        System.out.println(successfulMessageActual);
+        Assert.assertTrue(successfulMessageActual.contains(successfulMessageExpected));
+    }
+
+    public void assertRegistrationEmail(String firstName) throws IOException, InterruptedException {
+        Thread.sleep(4000);
+        String confirmationEmailActual = Utils.readLatestMail();
+        String confirmationEmailExpected = "Dear " + firstName + ", Welcome to our platform!";
+        System.out.println(confirmationEmailActual);
+        Assert.assertTrue(confirmationEmailActual.contains(confirmationEmailExpected));
 
     }
+
+    @AfterClass
+    public void tearDown() {
+        // Close the browser
+        driver.quit();
+
+    }
+}
+
 
